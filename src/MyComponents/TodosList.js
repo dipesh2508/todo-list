@@ -1,7 +1,15 @@
 import React from 'react'
+import {TodoComp} from './TodoComp';
 
-export const TodosList = () => {
+export const TodosList = (prop) => {
   return (
-    <div>TodosList is working</div>
+    <div className='container'>
+      <h3 className='text-center'>My todo list</h3>
+
+      {prop.todos.map((todos) => {
+        return <TodoComp todos = {todos} key = {todos.sno} onDelete ={prop.onDelete} /> 
+      })}
+      
+    </div>
   )
 }
